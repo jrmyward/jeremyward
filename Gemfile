@@ -40,12 +40,15 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 
+# themes
+gem 'ocd_theme_boomerang', path: '/Users/jrmyward/code/opensource/ocd_theme_boomerang'
+
 # views
-gem 'browser', :git => 'git://github.com/fnando/browser'
+gem 'browser', git: 'git://github.com/fnando/browser'
 gem "font-awesome-rails", '~> 3.2.1.3'
 gem 'haml'
 gem 'haml-rails'
-gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git', branch: 'v3.0'
+gem 'simple_form', git: 'git://github.com/plataformatec/simple_form.git', branch: 'v3.0'
 
 group :doc do
   # gem 'sdoc', require: false
@@ -62,7 +65,6 @@ group :development do
   # gem 'capistrano-rails',   '~> 1.1', require: false
   # gem 'capistrano-bundler', '~> 1.1', require: false
   # gem 'capistrano-rbenv', '~> 2.0', require: false
-  gem 'guard-rspec', require: false
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
@@ -73,14 +75,12 @@ group :test, :development do
   gem 'launchy'
   gem 'rack-mini-profiler', require: false
   gem 'rspec-rails', '~> 3.0.0.beta'
-  gem 'spork-rails'
+  gem 'spork-rails', '~> 4.0.0'
 end
 
 group :test do
   gem 'factory_girl_rails'
   gem 'faker'
-  # gem 'fuubar', git: 'git@github.com:jrmyward/fuubar.git', branch: 'develop'
-  gem 'guard-spork'
   gem 'minitest'
   gem 'poltergeist'
   gem 'shoulda-matchers'
