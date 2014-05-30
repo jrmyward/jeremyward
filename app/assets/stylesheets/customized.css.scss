@@ -1,0 +1,58 @@
+
+
+body, .footer {
+  background-color: #394450;
+}
+
+.wrapper {
+  background-color: #f1f1ef;
+}
+
+.ocd-theme-7 .ld .navbar-wp {
+  border-top: 5px solid #B33E2E;
+}
+.navbar {
+  .navbar-header {
+    .navbar-brand {
+      color: #394450;
+      background-color: #f1f1ef;
+      border-radius: 0;
+      display:block;
+      font-weight: bold;
+      height: 76px;
+      line-height: 20px;
+      margin: 0px;
+      padding: 28px 16px 28px 15px;
+      span {
+        color:#b33e2e;
+      }
+    }
+  }
+}
+
+#hero-index {
+  background-image: url('/assets/declaration_of_independence_and_gavel.jpg');
+  background-position: center 24%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  .content {
+    color: #FFFFFF;
+    display: block;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+    h3 {
+      font-family: "PT Sans",sans-serif !important;
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 38px;
+      margin-bottom: 5px;
+    }
+    .citation {
+      font-size: 20px;
+    }
+  }
+}
+

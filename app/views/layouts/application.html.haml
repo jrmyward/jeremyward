@@ -1,0 +1,27 @@
+!!!
+%html{:lang => "en"}
+  %head
+    = render "shared/layout_meta"
+    / start: CSS
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    / end: CSS
+    / start: Java Script
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    / end: Java Script
+    = yield(:head)
+  %body.ocd-theme-7
+    / Google Tag Manager
+    .wrapper.ld
+      = render "shared/header"
+      = content_for?(:content_top) ? yield(:content_top) : ''
+      - if flash.count > 0
+        %section.slice
+          .w-section.inverse
+            .container
+              .row.flash-notifications
+                - flash.each do |name, msg|
+                  %div{class: "alert alert-alert alert-#{name == :notice ? "success" : "danger"}"}
+                    %button.close{"data-dismiss" => "alert", href: "#"} &times;
+                    =msg
+      = yield
+      = render "shared/footer"

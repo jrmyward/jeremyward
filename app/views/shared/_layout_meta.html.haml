@@ -1,0 +1,25 @@
+%meta{:charset => "utf-8"}/
+= csrf_meta_tags
+%title= content_for?(:title) ? "#{yield(:title)} | Jeremy Ward" : "Truth, Honor, Fortitude | Jeremy Ward"
+%meta{:content => content_for?(:meta_author) ? "#{yield(:meta_author)}" : "Jeremy Ward", name: "author"}/
+%meta{:content => content_for?(:description) ? "#{yield(:description)}" : "", name: "description"}/
+
+%meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", name: "viewport"}/
+/ end: Mobile Specific
+/ start: Facebook Open Graph
+%meta{:content => content_for?(:title) ? "#{yield(:title)} | Jeremy Ward" : "Commit to be Fit | Jeremy Ward", :property => "og:title"}/
+%meta{:content => content_for?(:description) ? "#{yield(:description)}" : "The personal fitness revolution is coming! Get to know us and stay tuned for fitness tips, healthy lifestyle suggestions, and Jeremy Ward updates.", :property => "og:description"}/
+%meta{:content => content_for?(:og_type) ? "#{yield(:og_type)}" : "", :property => "og:type"}/
+%meta{:content => "Jeremy Ward", :property => "og:site_name"}/
+%meta{:content => content_for?(:og_url) ? "#{yield(:og_url)}" : "http://Jeremy Ward.com", :property => "og:url"}/
+%meta{:content => content_for?(:og_image) ? "#{yield(:og_image)}" : "#{image_url 'public/logo_beta.png'}", :property => "og:image"}/
+/ end: Facebook Open Graph
+/ start: Twitter Card
+%meta{:content => "summary", name: "twitter:card"}/
+%meta{:content => "@jrmyward", name: "twitter:site"}/
+%meta{:content => content_for?(:title) ? "#{yield(:title)} | Jeremy Ward" : "Truth, Honor, Fortitude | Jeremy Ward", name: "twitter:title"}/
+%meta{:content => content_for?(:description) ? "#{yield(:description)}" : ""}/
+%meta{:content => content_for?(:og_image) ? "#{yield(:og_image)}" : "", name: "twitter:image:src"}/
+%meta{:content => content_for?(:meta_twitter_creator) ? "#{yield(:meta_twitter_creator)}" : "@jrmyward", name: "twitter:creator"}/
+/ end: Twitter Card
+%link{:href => content_for?(:canonical) ? "#{yield(:canonical)}" : "#{request.original_url}", :rel => "canonical"}/

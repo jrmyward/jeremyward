@@ -10,7 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require ocd_theme_boomerang/jquery
 //= require jquery_ujs
+//= require ocd_theme_boomerang/application
 //= require turbolinks
-//= require_tree .
