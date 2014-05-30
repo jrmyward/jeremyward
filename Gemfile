@@ -42,6 +42,7 @@ gem 'jbuilder', '~> 2.0'
 
 # themes
 gem 'ocd_theme_boomerang', path: '/Users/jrmyward/code/opensource/ocd_theme_boomerang'
+gem 'ocd_theme_admin_genius', git: 'git@github.com:oc-digital/ocd_theme_admin_genius.git', tag: 'v2.0.0'
 
 # views
 gem 'browser', git: 'git://github.com/fnando/browser'

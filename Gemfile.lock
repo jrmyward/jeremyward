@@ -37,6 +37,14 @@ GIT
       xpath (~> 2.0)
 
 GIT
+  remote: git@github.com:oc-digital/ocd_theme_admin_genius.git
+  revision: 79e235f07a9c8e959759c6a4b489fa845d18864f
+  tag: v2.0.0
+  specs:
+    ocd_theme_admin_genius (2.0.0)
+      rails (~> 4.1.0)
+
+GIT
   remote: https://github.com/FriendlyId/friendly_id
   revision: 57baa3549a5d5b1ee0cc9b6a803c59d9de0e7d59
   specs:
@@ -342,6 +350,7 @@ DEPENDENCIES
   less-rails
   mini_magick
   minitest
+  ocd_theme_admin_genius!
   ocd_theme_boomerang!
   pg
   poltergeist
