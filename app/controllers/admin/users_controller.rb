@@ -13,8 +13,8 @@ class Admin::UsersController < AdminController
   end
 
   # GET /a/users/1
-  # def show
-  # end
+  def show
+  end
 
   # GET /a/users/new
   # def new
@@ -41,7 +41,7 @@ class Admin::UsersController < AdminController
     if @user.update_with_password(params[:user])
       # Sign in the user by passing validation in case his password changed
       sign_in @user, :bypass => true if @user.id == current_user.id
-      redirect_to edit_user_path(@user), :notice => "User was successfully updated."
+      redirect_to edit_admin_user_path(@user), :notice => "User was successfully updated."
     else
       render "edit"
     end
@@ -50,7 +50,7 @@ class Admin::UsersController < AdminController
   # DELETE /a/users/1
   # def destroy
   #   @user.destroy
-  #   redirect_to members_users_url, notice: 'User was successfully destroyed.'
+  #   redirect_to admin_users_url, notice: 'User was successfully destroyed.'
   # end
 
   private

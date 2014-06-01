@@ -17,7 +17,7 @@ Rails.application.routes.draw do
         put 'reject'
       end
     end
-    resources :users
+    resources :users, except: [:index, :new, :create, :destroy]
     get 'dashboard' => 'users#dashboard', as: 'root'
   end
 
