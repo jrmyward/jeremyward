@@ -1,0 +1,7 @@
+= admin_link_to("Dashboard", admin_root_path, "fa fa-bar-chart-o")
+
+- if current_user.admin?
+  / %li
+  /   = admin_link_to_dropdown "Equipment", "glyphicons dumbbell"
+  /   %ul
+  /     = admin_link_to("Equipment", equipment_index_path, "glyphicons dumbbell", "submenu")

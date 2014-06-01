@@ -7,6 +7,27 @@ Rails.application.routes.draw do
     delete 'signout' => 'devise/sessions#destroy', as: :destroy_user_session
   end
 
+  scope 'a', module: 'admin', as: 'admin' do
+    resources :comments, except: [:create, :new] do
+      collection do
+        delete 'destroy-batch' => "comments#destroy_batch", as: "destroy_batch"
+      end
+      member do
+        put 'approve'
+        put 'reject'
+      end
+    end
+    resources :users
+    get 'dashboard' => 'users#dashboard', as: 'root'
+  end
+
+  scope "blog" do
+    get 'tags/:tag', to: 'posts#index', as: :tag
+    # resources :posts do
+    #   resources :comments, only: [:create, :new]
+    # end
+  end
+
   root :to => "content#index"
 
 end

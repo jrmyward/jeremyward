@@ -39,10 +39,10 @@ describe Permissions::GuestPermission do
   end
 
   it "allows users" do
-    should_not authorize("members/users", :new)
-    should_not authorize("members/users", :create)
-    should_not authorize("members/users", :edit)
-    should_not authorize("members/users", :update)
-    should_not authorize("members/users", :destroy)
+    should_not authorize("a/users", :new)
+    should_not authorize("a/users", :create)
+    should_not authorize("a/users", :edit)
+    should_not authorize("a/users", :update)
+    should_not authorize("a/users", :destroy)
   end
 end

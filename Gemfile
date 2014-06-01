@@ -75,7 +75,7 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'rack-mini-profiler', require: false
-  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'rspec-rails', '3.0.0.beta2'
   gem 'spork-rails', '~> 4.0.0'
 end
 

@@ -1,0 +1,14 @@
+- content_for :content_top do
+  .pg-opt.pin
+    .container
+      .row
+        .col-md-6
+          %h2= title
+  %ol.breadcrumb
+    - links.each do |link|
+      - if link[1].size > 0
+        %li
+          = link_to link[0], link[1]
+      - else
+        %li.active
+          = link[0]
