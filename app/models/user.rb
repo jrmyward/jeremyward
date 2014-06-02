@@ -4,13 +4,19 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  mount_uploader :avatar, AvatarUploader
+
+  attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
+
   ROLES = %w[admin author]
 
   validates_presence_of :first_name, :last_name
   validates_inclusion_of :role, in: ROLES,
                           message: "The role <strong>{{value}}</strong> is not valid.",
                           if: "role.present?"
-  # validates :twitter_handle, format: { with: /\A@[A-Za-z0-9_]*\z/ }, if: "twitter_handle.present?"
+  validates :twitter_handle, format: { with: /\A@[A-Za-z0-9_]*\z/ }, if: "twitter_handle.present?"
+
+  has_many :posts, foreign_key: "author_id"
 
   def admin?
     role === "admin"

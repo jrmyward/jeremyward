@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   end
 
   scope 'a', module: 'admin', as: 'admin' do
+    scope "blog" do
+      resources :posts
+    end
     resources :comments, except: [:create, :new] do
       collection do
         delete 'destroy-batch' => "comments#destroy_batch", as: "destroy_batch"
@@ -23,9 +26,9 @@ Rails.application.routes.draw do
 
   scope "blog" do
     get 'tags/:tag', to: 'posts#index', as: :tag
-    # resources :posts do
-    #   resources :comments, only: [:create, :new]
-    # end
+    resources :posts, only: [:index, :show] do
+      # resources :comments, only: [:create, :new]
+    end
   end
 
   root :to => "content#index"
