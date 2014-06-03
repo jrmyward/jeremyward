@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   scope 'a', module: 'admin', as: 'admin' do
-    scope "blog" do
+    scope "blog", except: [:show] do
       resources :posts
     end
     resources :comments, except: [:create, :new] do

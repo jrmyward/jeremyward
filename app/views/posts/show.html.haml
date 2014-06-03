@@ -1,6 +1,34 @@
-%p#notice= notice
+- content_for :title,  "#{@post.title.titleize}"
+- content_for :description, @post.description
+- content_for :og_url, request.original_url
+- content_for :og_image, "#{image_url @post.image}" if @post.image?
+- content_for :meta_author, @post.author.full_name
+- content_for :meta_twitter_creator, @post.author.twitter_handle
 
+= render :partial => "shared/page_title", locals: { :title => "#{@post.title.titleize}" }
 
-= link_to 'Edit', edit_post_path(@post)
-\|
-= link_to 'Back', posts_path
+%section.slice
+  .w-section.inverse.blog-grid
+    .container
+      .row
+        .col-md-8
+          .row
+            .col-md-12
+              .w-box.blog-post
+                .figure
+                  %img{alt: "", src: "images/prv/wkp-img-1.jpg"}/
+                  %h2= @post.title.titleize
+                  %ul.meta-list
+                    %li
+                      %span Written by
+                      %span.bold= @post.author.full_name
+                    %li
+                      %span -
+                      = @post.published_at.strftime("%B %d, %Y")
+                  %ul.meta-list
+                    %li
+                      %span Tagged in:
+                    %li
+                      %a tag one
+                  = markdown_render(@post.body)
+

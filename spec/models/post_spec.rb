@@ -87,6 +87,29 @@ describe Post do
     end
   end
 
+  describe "published_status" do
+    context "not published" do
+      it "returns draft" do
+        post = create(:post)
+        expect(post.published_status).to eq "draft"
+      end
+    end
+
+    context "currently published" do
+      it "returns published" do
+        post = create(:post, published_at: 1.day.ago)
+        expect(post.published_status).to eq "published"
+      end
+    end
+
+    context "scheduled to be published" do
+      it "returns scheduled" do
+        post = create(:post, published_at: 2.days.from_now)
+        expect(post.published_status).to eq "scheduled"
+      end
+    end
+  end
+
   # describe "Tags" do
   #   it "assigns tags to a post" do
   #     post = create(:post, :tag_list => 'foo, bar')

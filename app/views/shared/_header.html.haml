@@ -16,20 +16,8 @@
       .navbar-collapse.collapse
         %ul.nav.navbar-nav
           %li.dropdown
-            %a.dropdown-toggle{"data-close-others" => "true", "data-hover" => "dropdown", "data-toggle" => "dropdown", href: "#"} Blog
-            %ul.dropdown-menu
-              %li
-                %a{href: "blog-grid.html"} Blog: Grid Large
-              %li
-                %a{href: "blog-grid2.html"} Blog: Grid Medium
-              %li
-                %a{href: "blog-list.html"} Blog: List
-              %li
-                %a{href: "blog-masonry.html"} Blog: Masonry
-              %li
-                %a{href: "blog-post.html"} Post: Standard
-              %li
-                %a{href: "blog-post2.html"} Post: Fluid
+            = nav_link "Blog", posts_path, /^\/blog/
+
         %ul.nav.navbar-nav.navbar-right.hidden-xs
           %li
             %a.social-link.facebook{href: "#", title: "Facebook"}

@@ -3,7 +3,7 @@
 .row
   .col-lg-12
     .box
-      .box-header{"data-original-title" => ""}
+      .box-header
         %h2
           %i.fa.fa-pencil
           = succeed "Blog Posts" do
@@ -14,22 +14,22 @@
         %table.table.table-striped.table-bordered.bootstrap-datatable.datatable
           %thead
             %tr
-              %th Username
-              %th Date registered
-              %th Role
+              %th Title
+              %th Publish Date
               %th Status
               %th Actions
           %tbody
-            %tr
-              %td Anton Phunihel
-              %td 2012/01/01
-              %td Member
-              %td
-                %span.label.label-success Active
-              %td
-                %a.btn.btn-success{href: "table.html#"}
-                  %i.fa.fa-search-plus
-                %a.btn.btn-info{href: "table.html#"}
-                  %i.fa.fa-edit
-                %a.btn.btn-danger{href: "table.html#"}
-                  %i.fa.fa-trash-o
+            - @posts.each do |post|
+              %tr
+                %td= post.title.titleize
+                %td= post.published_date
+                %td
+                  - if post.published_status == "draft"
+                    %span.label.label-default= post.published_status
+                  - elsif post.published_status == "published"
+                    %span.label.label-success= post.published_status
+                  - elsif post.published_status == "scheduled"
+                    %span.label.label-info= post.published_status
+                %td
+                  = button_link_to(edit_admin_post_path(post), "fa fa-edit", "btn-info")
+                  = button_link_to_destroy(admin_post_path(post), "Are you sure you want to permanently delete #{post.title.titleize}? ")

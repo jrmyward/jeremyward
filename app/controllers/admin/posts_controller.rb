@@ -36,7 +36,7 @@ class Admin::PostsController < AdminController
   # PATCH/PUT /a/blog/posts/1.json
   def update
     flash[:notice] = 'Post was successfully updated.' if @post.update(params[:post])
-    respond_with @post, location: admin_post_path(@post)
+    respond_with @post, location: admin_posts_path
   end
 
   # DELETE /a/blog/posts/1

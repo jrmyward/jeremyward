@@ -16,7 +16,7 @@
     / %abbr{:title => "required"} *
     Published at
   .col-sm-10.date
-    = f.text_field :published_at_string, class: "form-control date-picker", data: {"date-format" => "mm/dd/yyyy"}
+    = f.text_field :published_at_string, class: "form-control date-picker", data: {"date-format" => "mm/dd/yyyy"}, value: "#{post.published_at_formatted}"
 - if current_user.admin?
   = f.association :author, label_method: :full_name, value_method: :id, label_html: { class: "col-sm-2" }, wrapper: :horizontal_10
 - elsif current_user.author?

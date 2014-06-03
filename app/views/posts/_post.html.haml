@@ -1,0 +1,11 @@
+%li
+  .listing-image
+    %img.img-responsive{alt: "", src: "images/prv/wk-img-1.jpg"}/
+  .listing-body
+    %h3= link_to post.title.titleize, post_path(post)
+    %span.list-item-info
+      Posted by on
+      = post.published_at.strftime("%B %d, %Y")
+    = markdown_render(post.abstract)
+    %p
+      = link_to "Continue reading &raquo;".html_safe, post_path(post), class: "btn btn-xs btn-two pull-right"

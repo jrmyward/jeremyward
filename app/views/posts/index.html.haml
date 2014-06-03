@@ -1,17 +1,111 @@
-%h1 Listing posts
+- content_for :title,  "Blog"
+= render :partial => "shared/page_title", locals: { title: "Blog" }
 
-%table
-  %tr
-    %th
-    %th
-    %th
+%section.slice.bg-3
+  .w-section.inverse
+    .container
+      .row
+        .col-md-8
+          %ul.list-listings.blog-list
+            = render @posts
 
-  - @posts.each do |post|
-    %tr
-      %td= link_to 'Show', post
-      %td= link_to 'Edit', edit_post_path(post)
-      %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Post', new_post_path
+        .col-md-4
+          %h3.section-title Search
+          .widget
+            %form.form-inline
+              .input-group
+                %input.form-control{placeholder: "Search blog...", type: "text"}/
+                %span.input-group-btn
+                  %button.btn.btn-two{type: "button"} Go!
+          %h3.section-title Categories
+          .widget
+            %ul.categories.highlight
+              %li
+                %a{href: "#"} Web design
+              %li
+                %a{href: "#"} Online business
+              %li
+                %a{href: "#"} Marketing strategy
+              %li
+                %a{href: "#"} Technology
+              %li
+                %a{href: "#"} About finance
+          %h3.section-title Tabs
+          .widget
+            .tabs
+              %ul.nav.nav-tabs
+                %li.active
+                  %a{"data-toggle" => "tab", href: "#one"}
+                    %i.icon-star
+                    Popular
+                %li
+                  %a{"data-toggle" => "tab", href: "#two"} Recent
+              .tab-content
+                #one.tab-pane.active
+                  %ul.popular
+                    %li
+                      %img.img-thumbnail.pull-left{alt: "", src: "images/prv/team-img-2.jpg"}/
+                      %p
+                        %a{href: "#"} Dorlorem ipsum et mea dolor sit amet, usu timeam persius ea
+                        %i 20th, June 2013
+                    %li
+                      %img.img-thumbnail.pull-left{alt: "", src: "images/prv/team-img-3.jpg"}/
+                      %p
+                        %a{href: "#"} Dorlorem ipsum et mea dolor sit amet, usu timeam persius ea
+                        %i 20th, June 2013
+                    %li
+                      %img.img-thumbnail.pull-left{alt: "", src: "images/prv/team-img-1.jpg"}/
+                      %p
+                        %a{href: "#"} Dorlorem ipsum et mea dolor sit amet, usu timeam persius ea
+                        %i 20th, June 2013
+                #two.tab-pane
+                  %ul.recent
+                    %li
+                      %p
+                        %a{href: "#"} Dorlorem ipsum et mea dolor sit amet
+                    %li
+                      %p
+                        %a{href: "#"} Fierent adipisci iracundia est ei, usu timeam persius ea
+                    %li
+                      %p
+                        %a{href: "#"} Usu ea justo malis, pri quando everti electram ei
+          %h3.section-title Video
+          .widget
+            .w-box
+              %figure
+                .video-container
+                  %iframe{height: "147", src: "http://player.vimeo.com/video/22290612"}
+                %h2 Easy embeded movie
+          %h3.section-title Tags
+          .widget.tags-wr
+            %ul.tags-list
+              %li
+                %i.fa.fa-tags
+                %a{href: "#"} html5
+              %li
+                %i.fa.fa-tags
+                %a{href: "#"} css3
+              %li
+                %i.fa.fa-tags
+                %a{href: "#"} jquery
+              %li
+                %i.fa.fa-tags
+                %a{href: "#"} ajax
+              %li
+                %i.fa.fa-tags
+                %a{href: "#"} php
+              %li
+                %i.fa.fa-tags
+                %a{href: "#"} responsive
+              %li
+                %i.fa.fa-tags
+                %a{href: "#"} visio
+              %li
+                %i.fa.fa-tags
+                %a{href: "#"} bootstrap
+              %li
+                %i.fa.fa-tags
+                %a{href: "#"} template
+              %li
+                %i.fa.fa-tags
+                %a{href: "#"} mysql
