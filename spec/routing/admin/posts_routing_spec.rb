@@ -11,10 +11,6 @@ describe Admin::PostsController do
       expect(:get => "/a/blog/posts/new").to route_to("admin/posts#new")
     end
 
-    it "routes to #show" do
-      expect(:get => "/a/blog/posts/1").to route_to("admin/posts#show", id: "1")
-    end
-
     it "routes to #edit" do
       expect(:get => "/a/blog/posts/1/edit").to route_to("admin/posts#edit", id: "1")
     end
