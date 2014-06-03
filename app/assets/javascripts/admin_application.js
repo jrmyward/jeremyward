@@ -23,9 +23,10 @@
 //= require ocd_theme_admin_genius/jquery.inputlimiter.1.3.1.min
 //= require ocd_theme_admin_genius/bootstrap-datepicker.min
 //= require ocd_theme_admin_genius/bootstrap-timepicker.min
-//= require ocd_theme_admin_genius/moment.min
 //= require ocd_theme_admin_genius/daterangepicker.min
+//= require ocd_theme_admin_genius/moment
 //= require ocd_theme_admin_genius/core
 //= require ocd_theme_admin_genius/table
 //= require ocd_theme_admin_genius/form
+//= require admin_posts
 //= require turbolinks

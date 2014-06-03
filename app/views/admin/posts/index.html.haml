@@ -1,0 +1,35 @@
+- content_for :title,  "Blog Posts"
+
+.row
+  .col-lg-12
+    .box
+      .box-header{"data-original-title" => ""}
+        %h2
+          %i.fa.fa-pencil
+          = succeed "Blog Posts" do
+            %span.break
+        .box-icon
+          = link_to raw("<i class='icon-plus'></i>"), new_admin_post_path, class: "", title: "Create a new post"
+      .box-content
+        %table.table.table-striped.table-bordered.bootstrap-datatable.datatable
+          %thead
+            %tr
+              %th Username
+              %th Date registered
+              %th Role
+              %th Status
+              %th Actions
+          %tbody
+            %tr
+              %td Anton Phunihel
+              %td 2012/01/01
+              %td Member
+              %td
+                %span.label.label-success Active
+              %td
+                %a.btn.btn-success{href: "table.html#"}
+                  %i.fa.fa-search-plus
+                %a.btn.btn-info{href: "table.html#"}
+                  %i.fa.fa-edit
+                %a.btn.btn-danger{href: "table.html#"}
+                  %i.fa.fa-trash-o
