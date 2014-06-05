@@ -16,7 +16,8 @@
             .col-md-12
               .w-box.blog-post
                 .figure
-                  %img{alt: "", src: "images/prv/wkp-img-1.jpg"}/
+                  - if @post.image?
+                    = image_tag @post.image, class: "", alt: "#{@post.title.titleize}"
                   %h2= @post.title.titleize
                   %ul.meta-list
                     %li
@@ -31,4 +32,15 @@
                     %li
                       %a tag one
                   = markdown_render(@post.body)
-
+          - if @post.commentable?
+            .row
+              .col-md-12
+                .w-box.blog-post
+                  .comments-wr
+                    %h3.section-title Comments
+                    = nested_comments @post.comments.published.arrange(:order => "created_at asc")
+                .w-box.w-box-inverse.inner
+                  .comment-form
+                    %h3.section-title Add you comment
+                    #comment_form_prime
+                      = render "comments/form"
