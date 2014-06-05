@@ -10,11 +10,6 @@ class Admin::PostsController < AdminController
     @posts = Post.all
   end
 
-  # GET /a/blog/posts/1
-  # GET /a/blog/posts/1.json
-  def show
-  end
-
   # GET /a/blog/posts/new
   def new
     @post = Post.new

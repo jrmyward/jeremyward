@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://58da8bfd1dbe.rest.akismet.com/1.1/comment-check
+    body:
+      encoding: US-ASCII
+      string: comment_author=Porn+Master&comment_author_url=http%3A%2F%2Fpornmasters.com&comment_author_email=kasandra%40schimmelmurazik.biz&user_ip=127.0.0.1&user_agent=Mozilla%2F5.0+%28Macintosh%3B+Intel+Mac+OS+X+10.7%3B+rv%3A17.0%29+Gecko%2F20100101+Firefox%2F17.0&referrer=http%3A%2F%2Fjrmyward.dev%2Fblog%2Fposts%2Fhello-world&author_ip=127.0.0.1&comment_type=comment&blog=http%3A%2F%2FJeremyward.org%2F&is_test=1
+    headers:
+      User-Agent:
+      - Rails/4.1.0 | Rakismet/1.5.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 05 Jun 2014 04:11:24 GMT
+      Content-Type:
+      - text/plain; charset=utf-8
+      Content-Length:
+      - '4'
+      Connection:
+      - close
+      X-Akismet-Server:
+      - 10.8.80.18
+      X-Akismet-Guid:
+      - fcd9d2694a7aae6dc3f5fa1fdfbff884
+    body:
+      encoding: UTF-8
+      string: 'true'
+    http_version: 
+  recorded_at: Thu, 05 Jun 2014 04:11:27 GMT
+recorded_with: VCR 2.9.0

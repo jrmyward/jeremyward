@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   end
 
   scope 'a', module: 'admin', as: 'admin' do
-    scope "blog", except: [:show] do
-      resources :posts
+    scope "blog" do
+      resources :posts, except: [:show]
     end
     resources :comments, except: [:create, :new] do
       collection do
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   scope "blog" do
     get 'tags/:tag', to: 'posts#index', as: :tag
     resources :posts, only: [:index, :show] do
-      # resources :comments, only: [:create, :new]
+      resources :comments, only: [:create, :new]
     end
   end
 

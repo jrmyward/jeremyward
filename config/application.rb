@@ -48,5 +48,9 @@ module Jeremyward
       g.helper = false
     end
 
+    # Fight Spam
+    config.rakismet.key = Rails.application.secrets.akismet_key
+    config.rakismet.url = 'http://Jeremyward.org/'
+
   end
 end

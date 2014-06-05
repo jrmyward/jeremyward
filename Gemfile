@@ -24,6 +24,7 @@ gem 'will_paginate-bootstrap'
 
 # database
 gem 'pg'
+gem 'sanitize'
 
 # deployment
 gem 'unicorn'

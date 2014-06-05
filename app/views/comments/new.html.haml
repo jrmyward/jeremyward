@@ -1,0 +1,7 @@
+- content_for :title,  "New Post Comment"
+= render :partial => "shared/page_title", locals: { :title => "New Post Comment" }
+
+.container
+  .row
+    .col-sm-12
+      = render 'form'
