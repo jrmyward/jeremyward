@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
 
   attr_accessor :published_at_string
 
-  # acts_as_taggable
+  acts_as_taggable
 
   scope :published, -> { where('published_at <= ?', Time.now.utc) }
   scope :unpublished, -> { where('published_at > ?', Time.now.utc) }
@@ -46,9 +46,9 @@ class Post < ActiveRecord::Base
     new_record?
   end
 
-  # def tag_list_sorted
-  #   tag_list.map{ |t| t }.sort
-  # end
+  def tag_list_sorted
+    tag_list.map{ |t| t }.sort
+  end
 
   private
 

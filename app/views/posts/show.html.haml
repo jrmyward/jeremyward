@@ -16,21 +16,21 @@
             .col-md-12
               .w-box.blog-post
                 .figure
-                  - if @post.image?
-                    = image_tag @post.image, class: "", alt: "#{@post.title.titleize}"
-                  %h2= @post.title.titleize
                   %ul.meta-list
                     %li
                       %span Written by
-                      %span.bold= @post.author.full_name
+                      = link_to_author(@post.author)
                     %li
                       %span -
                       = @post.published_at.strftime("%B %d, %Y")
                   %ul.meta-list
                     %li
-                      %span Tagged in:
+                      %i.fa.fa-tags
                     %li
-                      %a tag one
+                      - if @post.tag_list.count > 0
+                        = link_to_tags_inline(@post.tag_list_sorted)
+                  - if @post.image?
+                    = image_tag @post.image, class: "", alt: "#{@post.title.titleize}"
                   = markdown_render(@post.body)
           - if @post.commentable?
             .row

@@ -110,19 +110,19 @@ describe Post do
     end
   end
 
-  # describe "Tags" do
-  #   it "assigns tags to a post" do
-  #     post = create(:post, :tag_list => 'foo, bar')
-  #     expect(post.tag_list).to eq(%w[foo bar])
-  #   end
+  describe "Tags" do
+    it "assigns tags to a post" do
+      post = create(:post, :tag_list => 'foo, bar')
+      expect(post.tag_list).to eq(%w[foo bar])
+    end
 
-  #   describe "tag_list_sorted" do
-  #     it "returns an array of tags in alphabetical order" do
-  #       post = create(:post, :tag_list => 'foo, bar')
-  #       expect(post.tag_list_sorted).to eq(%w[bar foo])
-  #     end
-  #   end
-  # end
+    describe "tag_list_sorted" do
+      it "returns an array of tags in alphabetical order" do
+        post = create(:post, :tag_list => 'foo, bar')
+        expect(post.tag_list_sorted).to eq(%w[bar foo])
+      end
+    end
+  end
 
   describe "Validations" do
     [:abstract, :body, :description, :title].each do |attr|
